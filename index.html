@@ -64,7 +64,7 @@
       input[type="email"]:focus,
       input[type="password"]:focus {
         border: none;
-        /* outline: none; */
+        outline: none;
       }
 
       /* /////////////////////////////////fonts//////////////////////////////////////////// */
@@ -153,6 +153,9 @@
         display: block !important;
         text-align: center;
         margin-bottom: 1rem;
+        margin: 1rem 0;
+        color: #686868;
+        font-size: 12px;
       }
 
       .entry-item {
@@ -241,7 +244,7 @@
         display: flex;
         align-items: center;
         gap: 1.3rem;
-        margin-bottom: 1.5rem;
+        margin-top: 1.5rem;
       }
 
       .entry-item:has(input[type="text"]:focus) > label[for="email"],
@@ -297,13 +300,7 @@
       .error.itemLevel,
       .error {
         color: #c0091f !important;
-      }
-
-      .error {
-        p {
-          color: #c0091f !important;
-          font-size: 12px;
-        }
+        font-size: 12px;
       }
 
       .simplemodal-overlay {
