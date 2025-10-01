@@ -8,7 +8,7 @@
 
     <style>
       body {
-        font-family: Nunito !important;
+        font-family: sans-serif !important;
         font-weight: 600 !important;
         overflow-x: hidden;
       }
@@ -35,6 +35,23 @@
         color: white !important;
       }
 
+      .color-secondary {
+        color: #0a0e16 !important;
+      }
+      .color-primary {
+        background: #8c7042 !important;
+      }
+      .bton {
+        border-radius: 1234px;
+        background: #8c7042;
+        display: flex;
+        height: 48px;
+        padding: 12px 16px;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        align-self: stretch;
+      }
       .p-relative {
         position: relative;
       }
@@ -43,12 +60,18 @@
       input[type="text"],
       input[type="password"] {
         width: 100%;
-        height: 52px;
-        padding: 0.5rem;
-        border: none;
-        border-radius: 8px;
-        background: #ede9f2;
-        margin-bottom: 1.5rem;
+        margin-bottom: 0.5rem;
+        border-radius: 123px;
+        border: 1px solid rgba(104, 104, 104, 0.1);
+        background: #fbfbfb;
+        display: flex;
+        min-height: 48px;
+        padding: 12px 16px;
+        align-items: center;
+        gap: 12px;
+        align-self: stretch;
+        font-size: 14px;
+        color: #686868;
       }
       input[type="text"]:focus,
       input[type="email"]:focus,
@@ -56,11 +79,7 @@
         border: none;
         outline: none;
       }
-      input[type="text"]::placeholder,
-      input[type="email"]::placeholder,
-      input[type="password"]::placeholder {
-        opacity: 0;
-      }
+
       /* /////////////////////////////////fonts//////////////////////////////////////////// */
 
       @font-face {
@@ -99,12 +118,15 @@
       .main-login {
         height: 100vh;
         padding: 0rem 9% 0;
-        gap: 3.5rem;
-        background-color: #edf7ff !important;
+
+        background-color: white !important;
       }
 
       .main-login > section {
-        width: 48.5% !important;
+        width: 100% !important;
+        margin: 0 auto;
+        z-index: 2;
+        opacity: 97%;
       }
 
       section:has(form) {
@@ -114,6 +136,12 @@
       section:has(form) > img {
         width: 11.6rem;
         height: 7rem;
+      }
+      .inp {
+        padding: 12px 16px;
+        align-items: center;
+        font-size: 14px;
+        color: #686868;
       }
       section:has(form) > div {
         text-align: center;
@@ -261,15 +289,28 @@
         }
       }
 
-      .error.itemLevel,
-      .error {
-        color: #eb001b !important;
+      .buttons button:hover {
+        background-color: #735e37 !important;
+        border-color: #8c7042 !important;
+      }
+      .buttons button {
+        background-color: #8c7042 !important;
+        margin: 0 auto;
+        width: 100%;
+        height: 50px;
+        border-radius: 123px;
+        border: none;
+        color: #fff;
+        font-size: 1em;
+      }
+      #continue {
+        width: 100% !important;
+        border-radius: 123px !important;
+        margin-top: 0px !important;
       }
 
-      .error {
-        p {
-          color: rgb(211, 3, 3);
-        }
+      .error.itemLevel > p {
+        color: #c0091f !important;
       }
 
       .simplemodal-overlay {
@@ -285,7 +326,11 @@
       }
 
       #emailVerificationControl_error_message {
-        color: rgb(211, 3, 3);
+        color: #c0091f !important;
+      }
+
+      .entry-item label {
+        display: none !important;
       }
 
       @media (max-width: 840px) {
@@ -323,13 +368,13 @@
       >
         <img
           class="mb-3"
-          src="https://ahmedgamalemam.github.io/b2c-login-page/images/AgencyLogo.png"
+          src="https://mariamelmsery.github.io/b2c-umrah-forget-password/images/LogoNew.svg"
           alt="logo"
         />
 
         <div>
-          <h3 class="color-blue-dark">User Details</h3>
-          <p style="color: #4b5059">
+          <h3 class="color-secondary">User Details</h3>
+          <p style="color: #686868">
             Enter your registered email address to get the code
           </p>
         </div>
@@ -337,23 +382,13 @@
         <form id="api" class="w-100" method="post" autocomplete="off">
           <div class="p-relative">
             <input
-              id="username"
-              name="username"
+              id="email"
+              name="email"
               type="text"
-              class="form_input back-color-EDF7FF"
+              class="inp"
               required
+              placeholder="Email Address"
             />
-
-            <label
-              for="username"
-              class="form-login-label d-flex align-items-center"
-            >
-              <img
-                src="https://ahmedgamalemam.github.io/b2c-login-page/images/username.png"
-                alt="username image"
-              />
-              <p>User name</p>
-            </label>
           </div>
 
           <div class="p-relative">
